@@ -6,3 +6,31 @@ npm install rorop -g
 
 bundle js plugin with [rollup](https://rollupjs.org/guide/en)
 # Command
+### 1. rop init
+
+```
+rop init xscroll
+```
+### 2. before bundle
+```
+cd xscroll
+/* 
+ * coding in ./src/main.js (default entry)
+ */
+/* 
+ * manual install deps for some reasons (required)
+ */
+npm i -D babel-preset-latest babel-plugin-external-helpers
+```
+### 3. rop build
+```
+rop build
+```
+# Develop
+:zap: Delightful web development [poi](https://github.com/egoist/poi)
+# Options
+
+|         |  command  |  default  |
+| --------   | :----:  | --  |
+|   name   |   rop init < required>     | --  |
+|   format      |   rop build [format]   | umd  |
