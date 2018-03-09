@@ -1,0 +1,27 @@
+{
+  "name": "rorop",
+  "version": "1.0.1",
+  "description": "rollup js plugin",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "rop": "./bin/rop.js"
+  },
+  "keywords": [
+    "rop"
+  ],
+  "author": "ekko",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.23.6",
+    "chalk": "^2.3.2",
+    "commander": "^2.14.1",
+    "rollup": "^0.53.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "uglify-js": "^3.3.2"
+  }
+}
