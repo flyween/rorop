@@ -1,12 +1,13 @@
 const fs = require('fs')
+const path = require('path')
 const babel = require('rollup-plugin-babel')
 const uglify = require('uglify-js')
 const rollup = require('rollup')
 const zlib = require('zlib')
 const chalk = require('chalk')
-const packageName = process.cwd().split('/').pop()
-const distDir = process.cwd() + '/dist'
-const srcDir = process.cwd() + '/scr'
+const packageName = process.cwd().split(path.sep).pop()
+const distDir = 'dist'
+const srcDir = 'src'
 
 const builds = [
     {
@@ -35,13 +36,15 @@ const builds = [
 const build = (opts) => {
     let built = 0
     const total = builds.length
-    if(!fs.existsSync(distDir) && fs.existsSync(srcDir)){
-        fs.mkdir(distDir, () => {})
-    }else{
-        console.log()
-        console.log(chalk.red("Run 'rop build' in right directory!"))
-        console.log()
-        return
+    if(!fs.existsSync(distDir)){
+        if(fs.existsSync(srcDir)){
+            fs.mkdir(distDir, () => {})
+        }else{
+            console.log()
+            console.log(chalk.red("Run 'rop build' in right directory!"))
+            console.log()
+            return
+        }
     }
     const next = () => {
       buildEntry(builds[built], opts).then(() => {
@@ -57,12 +60,7 @@ const build = (opts) => {
 
 const buildEntry = (config, opts) => {
     const inputOptions = {
-        input: config.entry,
-        plugins: [
-            babel({
-                exclude: 'node_modules/**'
-            })
-        ]
+        input: config.entry
     }
     const outputOptions = {
         file: config.dest,
@@ -90,7 +88,7 @@ const write = (dest, code) => {
 }
 
 const logError = (e) => {
-    console.log(e)
+    console.log(chalk.red(e))
 }
 
 module.exports = build;
