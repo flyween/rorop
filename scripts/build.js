@@ -60,7 +60,8 @@ const build = (opts) => {
 
 const buildEntry = (config, opts) => {
     const inputOptions = {
-        input: config.entry
+        input: config.entry,
+        plugins: config.plugins
     }
     const outputOptions = {
         file: config.dest,
