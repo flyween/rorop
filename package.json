@@ -1,12 +1,16 @@
 {
   "name": "rorop",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "rollup js plugin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "rop": "./bin/rop.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyween/rorop.git"
   },
   "keywords": [
     "rop"
