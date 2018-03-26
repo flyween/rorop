@@ -8,6 +8,7 @@ const chalk = require('chalk')
 const packageName = process.cwd().split(path.sep).pop()
 const distDir = 'dist'
 const srcDir = 'src'
+const check = require('./check-deps');
 
 const builds = [
     {
@@ -34,6 +35,15 @@ const builds = [
 ]
 
 const build = (opts) => {
+    /**
+     * check dependencies
+     */
+    if(!check()){
+        return
+    }
+    /**
+     * check process.cwd() and start build
+     */
     let built = 0
     const total = builds.length
     if(!fs.existsSync(distDir)){

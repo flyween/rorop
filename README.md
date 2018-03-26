@@ -17,10 +17,7 @@ cd xscroll
 /* 
  * coding in ./src/main.js (default entry)
  */
-/* 
- * manual install deps for some reasons (required)
- */
-npm i -D babel-preset-latest babel-plugin-external-helpers
+ 
 ```
 ### 3. rop build
 ```

@@ -3,6 +3,7 @@
 var program = require('commander');
 var init = require('../scripts/init');
 var build = require('../scripts/build');
+var check = require('../scripts/check-deps');
 // var dev = require('../scripts/dev');
 
 program
@@ -25,6 +26,7 @@ program
 //   .action(() => {
 //     dev()
 //   })
+
 
 program.parse(process.argv)
 
